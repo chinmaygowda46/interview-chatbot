@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Interview AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <h1>
+                    Interview AI
+                </h1>
+
+                <span>
+                    AI-powered practice
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <p class="section-label">
+                INTERVIEW ROLE
+            </p>
+
+
+            <div class="role-list">
+
+
+                <button
+                    class="role-card active"
+                    data-role="Software Engineer"
+                >
+
+                    <span class="role-icon">
+                        ⌘
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Software Engineer
+                        </strong>
+
+                        <small>
+                            Software development
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="role-card"
+                    data-role="AI Engineer"
+                >
+
+                    <span class="role-icon">
+                        ✦
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            AI Engineer
+                        </strong>
+
+                        <small>
+                            AI & LLM systems
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="role-card"
+                    data-role="ML Engineer"
+                >
+
+                    <span class="role-icon">
+                        ◈
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            ML Engineer
+                        </strong>
+
+                        <small>
+                            Machine learning
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="role-card"
+                    data-role="Data Analyst"
+                >
+
+                    <span class="role-icon">
+                        ▥
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Data Analyst
+                        </strong>
+
+                        <small>
+                            Data & analytics
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="role-card"
+                    data-role="Front-End Developer"
+                >
+
+                    <span class="role-icon">
+                        &lt;/&gt;
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Front-End Developer
+                        </strong>
+
+                        <small>
+                            Web interfaces
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="role-card"
+                    data-role="Back-End Developer"
+                >
+
+                    <span class="role-icon">
+                        ⌘
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Back-End Developer
+                        </strong>
+
+                        <small>
+                            APIs & systems
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+
+            <button
+                id="newInterviewBtn"
+                class="new-interview-btn"
+            >
+
+                <span>
+                    ↻
+                </span>
+
+                New Interview
+
+            </button>
+            <button
+    id="viewHistoryBtn"
+    type="button"
+>
+    Interview History
+</button>
+
+
+            <div class="stats">
+
+                <p class="section-label">
+                    SESSION
+                </p>
+
+
+                <div class="stat-row">
+
+                    <span>
+                        Questions
+                    </span>
+
+                    <strong id="questionCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-row">
+
+                    <span>
+                        Average Score
+                    </span>
+
+                    <strong id="averageScore">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="session-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Interview session
+                </span>
+
+            </div>
+
+
+            <!-- THEME SWITCH -->
+
+            <div class="topbar-actions">
+
+
+                <div class="theme-switch">
+
+                    <button
+                        id="lightThemeBtn"
+                        class="theme-btn"
+                        type="button"
+                    >
+
+                        ☀
+
+                        <span>
+                            Light
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        id="darkThemeBtn"
+                        class="theme-btn"
+                        type="button"
+                    >
+
+                        ☾
+
+                        <span>
+                            Dark
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="model-badge">
+
+                    <span class="model-dot"></span>
+
+                    Gemini Flash-Lite
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             START SCREEN
+        ========================== -->
+
+        <section
+            id="startScreen"
+            class="start-screen"
+        >
+
+            <div class="start-card">
+
+                <div class="start-icon">
+                    ✦
+                </div>
+
+
+                <p class="eyebrow">
+                    AI INTERVIEW PRACTICE
+                </p>
+
+
+                <h2>
+                    Prepare for your
+                    <span>next interview.</span>
+                </h2>
+
+
+                <p class="start-description">
+
+                    Practice realistic technical interviews
+                    with AI-generated questions, instant
+                    feedback, and contextual follow-ups.
+
+                </p>
+
+
+                <div class="selected-role-preview">
+
+                    <div class="preview-icon">
+                        ⌘
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Selected role
+                        </span>
+
+                        <strong id="startRole">
+                            Software Engineer
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="startInterviewBtn"
+                    class="start-interview-btn"
+                    type="button"
+                >
+
+                    Start Interview
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <div class="start-features">
+
+                    <div>
+                        <span>✦</span>
+                        AI-generated questions
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Instant evaluation
+                    </div>
+
+                    <div>
+                        <span>↗</span>
+                        Follow-up questions
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             INTERVIEW SCREEN
+        ========================== -->
+
+        <section
+            id="interviewScreen"
+            class="chat-container hidden"
+        >
+
+
+            <div class="chat-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        TECHNICAL INTERVIEW
+                    </p>
+
+                    <h2 id="currentRole">
+                        Software Engineer
+                    </h2>
+
+                </div>
+
+
+                <div class="question-number">
+
+                    Question
+
+                    <span id="questionNumber">
+                        1
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                id="chatMessages"
+                class="chat-messages"
+            >
+
+            </div>
+
+
+
+            <!-- INPUT -->
+
+            <div class="input-area">
+
+                <div class="input-wrapper">
+
+                    <textarea
+                        id="answerInput"
+                        rows="1"
+                        placeholder="Type your answer..."
+                    ></textarea>
+
+
+                    <button
+                        id="sendBtn"
+                        class="send-btn"
+                        title="Send"
+                        type="button"
+                    >
+                        ↑
+                    </button>
+
+                </div>
+
+
+                <div class="input-footer">
+
+                    <span>
+                        Press Enter to send
+                    </span>
+
+                    <span id="characterCount">
+                        0 characters
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+        <!-- FINAL RESULTS SCREEN -->
+<section id="resultsScreen" class="results-screen hidden">
+
+    <div class="results-container">
+
+        <h1>Interview Complete 🎉</h1>
+
+        <p>Here's a summary of your performance.</p>
+
+        <div class="results-stats">
+
+            <div class="result-card">
+                <span>Overall Score</span>
+                <strong id="finalScore">0/0</strong>
+            </div>
+
+            <div class="result-card">
+                <span>Questions</span>
+                <strong id="finalQuestionCount">0</strong>
+            </div>
+
+            <div class="result-card">
+                <span>Average</span>
+                <strong id="finalAverageScore">0/5</strong>
+            </div>
+
+        </div>
+
+        <div class="results-section">
+            <h3>Strengths</h3>
+            <div id="finalStrengths"></div>
+        </div>
+
+        <div class="results-section">
+            <h3>Weak Areas</h3>
+            <div id="finalWeaknesses"></div>
+        </div>
+
+        <div class="results-section">
+            <h3>Suggestions</h3>
+            <div id="finalSuggestions"></div>
+        </div>
+
+        <button
+            id="newInterviewFromResults"
+            type="button"
+        >
+            Start New Interview
+        </button>
+
+    </div>
+
+</section>
+<!-- INTERVIEW HISTORY -->
+
+<section id="historyScreen" class="results-screen hidden">
+
+    <div class="results-container">
+
+        <h1>Interview History</h1>
+
+        <p>Review your previous interview sessions.</p>
+
+        <div id="historyList"></div>
+
+        <button
+            id="backFromHistoryBtn"
+            type="button"
+        >
+            Back
+        </button>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+<!-- Final Results Screen -->
+<section id="resultsScreen" class="screen hidden">
+
+    <div class="results-container">
+
+        <h1>Interview Complete 🎉</h1>
+
+        <p class="results-subtitle">
+            Here's how you performed in your interview.
+        </p>
+
+        <div class="results-stats">
+
+            <div class="result-card">
+                <span class="result-label">Overall Score</span>
+                <span id="finalScore" class="result-value">0/5</span>
+            </div>
+
+            <div class="result-card">
+                <span class="result-label">Questions</span>
+                <span id="finalQuestionCount" class="result-value">0</span>
+            </div>
+
+            <div class="result-card">
+                <span class="result-label">Average</span>
+                <span id="finalAverageScore" class="result-value">0/5</span>
+            </div>
+
+        </div>
+
+        <div class="results-section">
+            <h2>Strengths</h2>
+            <div id="finalStrengths"></div>
+        </div>
+
+        <div class="results-section">
+            <h2>Weak Areas</h2>
+            <div id="finalWeaknesses"></div>
+        </div>
+
+        <div class="results-section">
+            <h2>Suggestions for Improvement</h2>
+            <div id="finalSuggestions"></div>
+        </div>
+
+        <button id="newInterviewFromResults" class="primary-btn">
+            Start New Interview
+        </button>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
